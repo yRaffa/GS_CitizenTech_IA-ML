@@ -1,0 +1,13 @@
+# CitizenTech · Acessibilidade Urbana — IA & Machine Learning
+# Instalação:  pip install -r requirements.txt
+#
+# Versões MÍNIMAS: o notebook foi testado de ponta a ponta com elas (Python 3.12).
+# Os números do relatório foram gerados com: pandas 3.0.6, numpy 2.5.4, scikit-learn 1.9.1,
+# xgboost 3.4.1 e matplotlib 3.11.2 (Python 3.12.3). Com outras versões, os valores podem variar um pouco.
+
+pandas>=2.1
+numpy>=1.26
+scikit-learn>=1.4
+xgboost>=2.0
+matplotlib>=3.8
+jupyter>=1.0

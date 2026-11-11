@@ -29,39 +29,32 @@ Ciclo completo de **Machine Learning** sobre dados **reais e públicos** do **Ce
 | Item | Link |
 |---|---|
 | Vídeo |  |
-| Relatório | [`RELATORIO_ML.md`](ml\RELATORIO_ML.md) |
+| Relatório | [`RELATORIO_ML.md`](ml/RELATORIO_ML.md) |
 | Notebook | [`GS_CitizenTech_IAML.ipynb`](GS_CitizenTech_IAML.ipynb) |
 
 🤖 **Pergunta de ML:** dadas as características de uma escola e os demais itens de acessibilidade que ela declara, qual a probabilidade de **faltar rampa de acesso**?
 
 ## 🏗️ Estrutura
 ```
-ml/
- ├─ README.md                        este arquivo
- ├─ GS_CitizenTech_IAML.ipynb        notebook executado
- ├─ RELATORIO_ML.md                  relatório do projeto
- ├─ requirements.txt                 bibliotecas Python
- ├─ preparar_dados.py                gera a base comprimida a partir do CSV do INEP
- ├─ dados/
- │   ├─ README.md                    fonte, link, período, colunas e tratamentos
- │   └─ escolas_brasil_2025.csv.gz   base completa (214.192 escolas)
- ├─ saidas/
- │   ├─ previsoes_escolas_oof.csv    probabilidade de faltar rampa, por escola (usado pela API em C#)
- │   ├─ modelo_xgb_sem_rampa.json    modelo treinado (formato nativo do XGBoost)
- │   ├─ busca_hiperparametros.csv    resultado das 12 combinações
- │   └─ metricas.json                métricas finais
- └─ figuras/                         gráficos gerados pelo notebook
+.
+├─ README.md
+├─ GS_CitizenTech_IAML.ipynb
+├─ dados/
+│   └─ escolas_brasil_2025.csv.gz
+└─ ml/
+    ├─ RELATORIO_ML.md
+    └─ figuras/
 ```
 
 ## 🎯 Como atende cada critério
 | Critério (pontos) | Onde ver |
 |---|---|
-| **Problema e dados reais** (2,0) | Notebook, seção **1**: pergunta de ML, fonte (INEP), link, período e recorte; análise por região, UF, rede e zona. Detalhes em `dados/README.md` |
-| **Escolha justificada do modelo** (1,0) | Seção **2**: comparação entre XGBoost, Random Forest, MLP, LSTM e KMeans + PCA, com o motivo da escolha |
-| **Preparação e divisão treino/teste** (2,0) | Seção **3**: vazamento de dados (`IN_ACESSIBILIDADE_INEXISTENTE`), código especial `88888`, seleção das 214 variáveis, divisão 80/20 **estratificada por região e alvo** e modelos de referência |
-| **Treino com diferentes parâmetros** (2,0) | Seção **4**: 12 combinações de 3 hiperparâmetros (`max_depth`, `learning_rate`, `n_estimators`), validação cruzada de 5 partições **somente no treino** |
-| **Resultados em treino e teste** (2,0) | Seção **5**: métricas lado a lado, matriz de confusão, curva ROC, desempenho por região, limiar e faixas de risco |
-| **Conclusão e leitura para o cidadão** (1,0) | Seção **6**: o que o resultado significa, limitações e ODS |
+| **Problema e dados reais** | Notebook, seção **1**: pergunta de ML, fonte (INEP), link, período e recorte; análise por região, UF, rede e zona. |
+| **Escolha justificada do modelo** | Seção **2**: comparação entre XGBoost, Random Forest, MLP, LSTM e KMeans + PCA, com o motivo da escolha |
+| **Preparação e divisão treino/teste** | Seção **3**: vazamento de dados (`IN_ACESSIBILIDADE_INEXISTENTE`), código especial `88888`, seleção das 214 variáveis, divisão 80/20 **estratificada por região e alvo** e modelos de referência |
+| **Treino com diferentes parâmetros** | Seção **4**: 12 combinações de 3 hiperparâmetros (`max_depth`, `learning_rate`, `n_estimators`), validação cruzada de 5 partições **somente no treino** |
+| **Resultados em treino e teste** | Seção **5**: métricas lado a lado, matriz de confusão, curva ROC, desempenho por região, limiar e faixas de risco |
+| **Conclusão e leitura para o cidadão** | Seção **6**: o que o resultado significa, limitações e ODS |
 
 ## 📊 Resultados em destaque
 | Item | Resultado |
