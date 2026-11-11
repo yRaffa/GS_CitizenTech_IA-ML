@@ -38,6 +38,7 @@ Ciclo completo de **Machine Learning** sobre dados **reais e públicos** do **Ce
 ```
 .
 ├─ README.md
+├─ requirements.txt
 ├─ GS_CitizenTech_IAML.ipynb
 ├─ dados/
 │   └─ escolas_brasil_2025.csv.gz
